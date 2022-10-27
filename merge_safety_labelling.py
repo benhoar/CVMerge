@@ -1,14 +1,15 @@
 import pickle
 import pandas as pd, os
-path = './Samples' 
-for mech in os.listdir(path): 
+path = './Samples'
+mechs = ['EC1', 'CE', 'ECE', 'DISP', 'ECP', 'T', 'E'] 
+for mech in mechs: 
    files = os.listdir(f'{path}/{mech}')
    files = [f for f in files if f.endswith('.txt')]
    merge_safe = {}
    conditional_safe = {}
    for file in files:
       df = pd.read_csv(f'{path}/{mech}/{file}')
-      df = df.loc[df['v'] == max(df['v'])]
+      df = df.loc[df['v'] == min(df['v'])]
       n = len(df)//2
       fwd = df.iloc[:n, :]
       rev = df.iloc[n:, :]
