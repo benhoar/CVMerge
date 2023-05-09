@@ -1,0 +1,9 @@
+,0.0_0.5
+predicted_pos,68251.0
+population,19973.0
+false_neg,19230.0
+false_pos,67508.0
+true_pos,743.0
+precision,0.010886287380404683
+recall,0.03720022029740149
+f1,0.01684348929996373
